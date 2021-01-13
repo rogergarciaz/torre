@@ -7,7 +7,7 @@ function Navbar() {
   const { fav } = useContext(UserContext);
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-light'>
-      <div className='container-fluid'  style={{backgroundColor: 'gray !important'}}>
+      <div className='container-fluid'>
         <button
           className='navbar-toggler'
           type='button'

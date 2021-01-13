@@ -12,6 +12,7 @@
 /build
 
 # misc
+.eslintcache
 .DS_Store
 .env.local
 .env.development.local
@@ -24,3 +25,7 @@ yarn-error.log*
 
 # Local Netlify folder
 .netlify
+
+# Mock JSONs
+/src/helpers/mock.json
+/src/helpers/mock_gig.json
