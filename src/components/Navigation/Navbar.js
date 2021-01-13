@@ -43,7 +43,7 @@ function Navbar() {
         </div>
         <form className='form-inline'>
           <Link className='nav-link active' aria-current='page' to='/favs'>
-            <i className='fa fa-eye' style={{ fontSize: '1.2em' }}>
+            <i className='fa fa-star' style={{ fontSize: '1.2em' }}>
               <span className='spacing'>{fav.length}</span>
             </i>
           </Link>

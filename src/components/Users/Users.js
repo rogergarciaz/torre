@@ -15,7 +15,7 @@ import './Ripple.css';
  * A better approach would be use React Context to manage state instead of passing "search"
  * prop throughout all the components. However, this is not a complicated statefull app, nor
  * a tangled up one. Managing states in this way is fine. However it may be a good idea if I
- * want to work with this is the future. Maybe using a different endpoint and another set of
+ * want to work with this in the future. Maybe using a different endpoint and another set of
  * attributes.
  */
 
@@ -71,7 +71,7 @@ export default function Users() {
               variants={variants}
               transition={{ delay: delay, duration: 2 }}
             >
-              look for Torre's users
+              search for Torre's users
             </motion.h1>
             <motion.h1
               initial='hidden'
@@ -99,7 +99,7 @@ export default function Users() {
           className='input-group mb-3 mt-4'
         >
           <input
-            placeholder='Try with samgomjim18'
+            placeholder='Try with zroger'
             autoComplete='off'
             autoCorrect='off'
             autoCapitalize='off'
@@ -143,7 +143,7 @@ export default function Users() {
           <>
             <Loader />
             <motion.div variants={container} initial='hidden' animate='show'>
-              <h1>Not found, type a different user</h1>
+              <h1>Not found, try with a different user</h1>
             </motion.div>
           </>
         ) : null}

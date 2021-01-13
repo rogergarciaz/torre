@@ -1,5 +1,5 @@
 [build]
-  command = "yarn build && cd functions/auth-fetch && yarn"
+  command = "yarn build"
   functions = "functions"
 [[redirects]]
   from = "/api/*"

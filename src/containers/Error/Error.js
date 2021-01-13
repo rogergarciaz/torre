@@ -13,7 +13,7 @@ class ErrorBoundary extends React.Component {
 
   render() {
     if (this.state.hasError) {
-      return <p>Upsss Loading failed! Please reload.</p>;
+      return <p>Upsss, Loading failed! Please reload.</p>;
     }
 
     return this.props.children;

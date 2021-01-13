@@ -131,7 +131,7 @@ export default function Gallery() {
                             target='_blank'
                             rel='noreferrer'
                           >
-                            Take me to the offer!
+                            Let's go to the offer!
                           </a>
                         </div>
                         <div className='modal-footer'>
@@ -160,7 +160,7 @@ export default function Gallery() {
                               }
                             }}
                           >
-                            Send to favs
+                            Select like fav
                           </button>
                         </div>
                       </div>

@@ -50,7 +50,7 @@ export default function Accordion({ education, jobs, projects }) {
             );
           })
         ) : (
-          <code>No info</code>
+          <code>No information</code>
         )}
       </details>
 
@@ -88,7 +88,7 @@ export default function Accordion({ education, jobs, projects }) {
             );
           })
         ) : (
-          <code>No info</code>
+          <code>No information</code>
         )}
       </details>
 
@@ -126,7 +126,7 @@ export default function Accordion({ education, jobs, projects }) {
             );
           })
         ) : (
-          <code>No info</code>
+          <code>No information</code>
         )}
       </details>
     </>
