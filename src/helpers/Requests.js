@@ -18,12 +18,26 @@ export const fetchUsername = async username => {
 
 /**
  *
- * @param {*} offser: Number, offset for lookup
+ * @param {*} offset: Number, offset for lookup
+ *
+ * @return {object} Returns an object with the users data
+ */
+export const fetchUsers = async offset => {
+  const response = await axios.post(`/api/users/users?offset=${offset}`);
+  if (response.status === 200) {
+    return response.data.msg;
+  }
+  throw new Error(response.status);
+};
+
+/**
+ *
+ * @param {*} offset: Number, offset for lookup
  *
  * @return {object} Returns an object with the job data
  */
 export const fetchJobs = async offset => {
-  const response = await axios.post(`/api/gigs/gigs?offset=${offset}`);
+  const response = await axios.post(`/api/jobs/jobs?offset=${offset}`);
   if (response.status === 200) {
     return response.data.msg;
   }

@@ -4,9 +4,10 @@ import Loader from '../../components/Loader/Loader';
 import ErrorBoundary from '../Error/Error';
 const Home = lazy(() => import('../../components/Home/Home'));
 const Users = lazy(() => import('../../components/Users/Users'));
-const Gigs = lazy(() => import('../../components/Gigs/Gigs'));
+const Jobs = lazy(() => import('../../components/Jobs/Jobs'));
 const Navbar = lazy(() => import('../../components/Navigation/Navbar'));
 const Favs = lazy(() => import('../../components/Favs/Favs'));
+const UsersList = lazy(() => import('../../components/UsersList/UsersList'));
 
 export default function Routes() {
   return (
@@ -16,17 +17,19 @@ export default function Routes() {
           <div>
             <Navbar className='col-3' />
           </div>
-
           <div className='container col-8'>
             <Switch>
               <Route exact path='/'>
                 <Home />
               </Route>
-              <Route path='/users'>
+              <Route path='/user'>
                 <Users />
               </Route>
-              <Route path='/gigs'>
-                <Gigs />
+              <Route exact path='/users'>
+                <UsersList />
+              </Route>
+              <Route path='/jobs'>
+                <Jobs />
               </Route>
               <Route path='/favs'>
                 <Favs />

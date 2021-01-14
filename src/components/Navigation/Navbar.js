@@ -6,7 +6,7 @@ import { UserContext } from '../../helpers/UserContext';
 function Navbar() {
   const { fav } = useContext(UserContext);
   return (
-    <nav className='navbar navbar-expand-lg navbar-light bg-light'>
+    <nav className='navbar navbar-expand-lg navbar-light bg-light' style={{backgroundColor: 'whitesmoke'}}>
       <div className='container-fluid'>
         <button
           className='navbar-toggler'
@@ -28,13 +28,19 @@ function Navbar() {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link active' aria-current='page' to='/users'>
+              <Link className='nav-link active' aria-current='page' to='/user'>
                 <i className='fa fa-user mr-2'></i>
+                <span className='spacing'>User</span>
+              </Link>
+            </li>
+            <li className='nav-item'>
+              <Link className='nav-link active' aria-current='page' to='/users'>
+                <i className='fa fa-users' ></i>
                 <span className='spacing'>Users</span>
               </Link>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link active' aria-current='page' to='/gigs'>
+              <Link className='nav-link active' aria-current='page' to='/jobs'>
                 <i className='fa fa-suitcase mr-5'></i>
                 <span className='spacing'>Jobs</span>
               </Link>
@@ -43,7 +49,7 @@ function Navbar() {
         </div>
         <form className='form-inline'>
           <Link className='nav-link active' aria-current='page' to='/favs'>
-            <i className='fa fa-star' style={{ fontSize: '1.2em' }}>
+            <i className='fa fa-heart' style={{ fontSize: '1.1em', color: 'black' }}>
               <span className='spacing'>{fav.length}</span>
             </i>
           </Link>

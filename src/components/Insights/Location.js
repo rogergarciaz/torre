@@ -26,8 +26,8 @@ export default function Location({ location }) {
       >
         <Popup>
           {location !== undefined
-            ? "Hi, I'm here"
-            : "I really don't know where am I, sorry this is just a default position"}
+            ? "Hey, Come get me"
+            : "I know nothing, this is just a default position"}
         </Popup>
       </Marker>
     </MapContainer>

@@ -15,9 +15,8 @@ const handler = async function (event, context) {
   const { identity, user } = context.clientContext;
   try {
     const offset = event.queryStringParameters.offset;
-    // `https://search.torre.co/persons/_search?offset=${offset}&size=5`,
     const response = await fetch(
-      `https://search.torre.co/opportunities/_search?offset=${offset}&size=5`,
+      `https://search.torre.co/people/_search?offset=${offset}&size=10`,
       {
         method: 'POST',
       }

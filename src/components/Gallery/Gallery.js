@@ -23,6 +23,26 @@ export default function Gallery() {
   return (
     <>
       <div className='container'>
+      {offset===0? null : (
+        <>
+          <motion.i
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.9 }}
+          onClick={() => {
+            setOffset(offset - 5);
+          }}
+          type='button'
+          className='fa fa-hand-o-left mb-4 '
+          style={{ fontSize: '2em' }}
+        >
+          <span>
+            {'  '}
+            Previous 10 Jobs
+          </span>
+        </motion.i>
+        <br />
+      </>
+      ) }
         <motion.i
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
@@ -30,12 +50,12 @@ export default function Gallery() {
             setOffset(offset + 5);
           }}
           type='button'
-          className='fa fa-plus mb-4 '
+          className='fa fa-hand-o-right mb-4 '
           style={{ fontSize: '2em' }}
         >
           <span>
             {'  '}
-            Load More
+            Next 10 Jobs
           </span>
         </motion.i>
 
@@ -142,26 +162,41 @@ export default function Gallery() {
                           >
                             Close
                           </button>
-                          <button
+                          {(!isArrayInArray(fav, item)) ? (
+                            <button
                             type='button'
                             className='btn btn-warning'
                             data-bs-dismiss='modal'
                             onClick={() => {
-                              if (!isArrayInArray(fav, item)) {
-                                setFav([...fav, item]);
-                                let sync = fav;
-                                sync.push(item);
-                                localStorage.setItem(
-                                  'favs',
-                                  JSON.stringify(sync)
-                                );
-                              } else {
-                                alert('Already on your favs');
-                              }
+                              setFav([...fav, item]);
+                              let sync = fav;
+                              sync.push(item);
+                              localStorage.setItem(
+                                'favsUsers',
+                                JSON.stringify(sync)
+                              );
                             }}
-                          >
-                            Select like fav
+                            >
+                            <i className='fa fa-heart-o mr-5'></i>
                           </button>
+                          ) : (
+                            <button
+                            type='button'
+                            className='btn btn-warning'
+                            data-bs-dismiss='modal'
+                            onClick={() => {
+                              setFav(fav.filter(i => i.id !== item.id));
+                              let sync = fav;
+                              sync.pop(item);
+                              localStorage.setItem(
+                                'favsUsers',
+                                JSON.stringify(sync)
+                              );
+                            }}
+                            >
+                              <i className='fa fa-heart mr-5'></i>
+                            </button>
+                          )}
                         </div>
                       </div>
                     </div>

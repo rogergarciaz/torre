@@ -1,10 +1,9 @@
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
-import DownArrow from '../../assets/Icons/DownArrow';
 import { variants } from '../../helpers/Constants';
-import Gallery from '../Gallery/Gallery';
+import List from '../List/List';
 
-export default function Gigs() {
+export default function UsersList() {
   const [delay, setDelay] = useState(1);
   const [render, setRender] = useState(false);
 
@@ -26,16 +25,8 @@ export default function Gigs() {
           variants={variants}
           transition={{ duration: 2 }}
         >
-          Here you can see Torre's jobs!
+          Let's see possibly signals!
         </motion.h1>
-        <motion.div
-          initial='hidden'
-          animate='visible'
-          variants={variants}
-          transition={{ delay: delay * 2, duration: 2 }}
-        >
-          <DownArrow />
-        </motion.div>
         <motion.div
           initial='hidden'
           animate='visible'
@@ -43,7 +34,7 @@ export default function Gigs() {
           transition={{ delay: delay * 3, duration: 2 }}
           className='input-group mb-3 mt-4'
         >
-          <Gallery />
+          <List />
         </motion.div>
       </div>
     )
