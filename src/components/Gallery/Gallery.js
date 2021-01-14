@@ -1,8 +1,6 @@
 import { motion } from 'framer-motion';
-import { Fragment, useContext, useEffect, useState } from 'react';
-import { isArrayInArray } from '../../helpers/Constants';
+import { Fragment, useEffect, useState } from 'react';
 import { fetchJobs } from '../../helpers/Requests';
-import { UserContext } from '../../helpers/UserContext';
 import Loader from '../Loader/Loader';
 import '../Users/Ripple.css';
 import './Gallery.css';
@@ -10,7 +8,6 @@ import './Gallery.css';
 export default function Gallery() {
   const [state, setState] = useState(null);
   const [offset, setOffset] = useState(0);
-  const { fav, setFav } = useContext(UserContext);
 
   useEffect(() => {
     const fetch = async () => {
@@ -162,41 +159,6 @@ export default function Gallery() {
                           >
                             Close
                           </button>
-                          {(!isArrayInArray(fav, item)) ? (
-                            <button
-                            type='button'
-                            className='btn btn-warning'
-                            data-bs-dismiss='modal'
-                            onClick={() => {
-                              setFav([...fav, item]);
-                              let sync = fav;
-                              sync.push(item);
-                              localStorage.setItem(
-                                'favsUsers',
-                                JSON.stringify(sync)
-                              );
-                            }}
-                            >
-                            <i className='fa fa-heart-o mr-5'></i>
-                          </button>
-                          ) : (
-                            <button
-                            type='button'
-                            className='btn btn-warning'
-                            data-bs-dismiss='modal'
-                            onClick={() => {
-                              setFav(fav.filter(i => i.id !== item.id));
-                              let sync = fav;
-                              sync.pop(item);
-                              localStorage.setItem(
-                                'favsUsers',
-                                JSON.stringify(sync)
-                              );
-                            }}
-                            >
-                              <i className='fa fa-heart mr-5'></i>
-                            </button>
-                          )}
                         </div>
                       </div>
                     </div>

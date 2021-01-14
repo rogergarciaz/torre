@@ -1,18 +1,18 @@
 import { useState, useEffect, useMemo } from 'react';
-import { UserContext } from '../helpers/UserContext';
+import { UsersContext } from '../helpers/Context';
 import Routes from './Routes/Routes';
 
 function App() {
-  const [fav, setFav] = useState([]);
-  const value = useMemo(() => ({ fav, setFav }), [fav, setFav]);
+  const [loved, setLoved] = useState([]);
+  const value = useMemo(() => ({ loved, setLoved }), [loved, setLoved]);
 
   const onLoad = async () => {
-    const favs = await JSON.parse(localStorage.getItem('favs'));
-    if (favs === null) {
-      setFav([]);
+    const users = await JSON.parse(localStorage.getItem('users'));
+    if (users === null) {
+      setLoved([]);
       return;
     }
-    setFav(favs);
+    setLoved(users)
   };
   useEffect(() => {
     onLoad();
@@ -20,11 +20,11 @@ function App() {
 
   return (
     <>
-      {fav !== null ? (
+      {loved !== null ? (
         <>
-          <UserContext.Provider value={value}>
+          <UsersContext.Provider value={value}>
             <Routes />{' '}
-          </UserContext.Provider>
+          </UsersContext.Provider>
         </>
       ) : null}
     </>

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Fragment, useContext, useEffect, useState } from 'react';
 import { isArrayInArray } from '../../helpers/Constants';
 import { fetchUsers } from '../../helpers/Requests';
-import { UserContext } from '../../helpers/UserContext';
+import { UsersContext } from '../../helpers/Context';
 import Loader from '../Loader/Loader';
 import '../Users/Ripple.css';
 import '../Gallery/Gallery.css';
@@ -10,7 +10,7 @@ import '../Gallery/Gallery.css';
 export default function List() {
   const [state, setState] = useState(null);
   const [offset, setOffset] = useState(0);
-  const { favU, setFavU } = useContext(UserContext);
+  const { loved, setLoved } = useContext(UsersContext);
 
   useEffect(() => {
     const fetch = async () => {
@@ -73,7 +73,7 @@ export default function List() {
                     data-bs-target={`#${item.username}`}
                     type='button'
                   ></div>
-
+                  {console.log(item)}
                   <div className='modal fade' id={item.username} tabIndex='-1'>
                     <div className='modal-dialog'>
                       <div className='modal-content'>
@@ -113,27 +113,41 @@ export default function List() {
                           >
                             Close
                           </button>
-                          <button
+                          {(!isArrayInArray(loved, item)) ? (
+                            <button
                             type='button'
                             className='btn btn-warning'
                             data-bs-dismiss='modal'
                             onClick={() => {
-                              console.log(favU)
-                              //if (!isArrayInArray(favU, item)) {
-                              //  setFavU([...favU, item]);
-                              //  let sync = favU;
-                              //  sync.push(item);
-                              //  localStorage.setItem(
-                              //    'favsUsers',
-                              //    JSON.stringify(sync)
-                              //  );
-                              //} else {
-                              //  alert('Already on your favs');
-                              //}
+                              setLoved([...loved, item]);
+                              let sync = loved;
+                              sync.push(item);
+                              localStorage.setItem(
+                                'users',
+                                JSON.stringify(sync)
+                              );
+                            }}
+                            >
+                            <i className='fa fa-heart-o mr-5'></i>
+                          </button>
+                          ) : (
+                            <button
+                            type='button'
+                            className='btn btn-warning'
+                            data-bs-dismiss='modal'
+                            onClick={() => {
+                              setLoved(loved.filter(i => i.id !== item.id));
+                              let sync = loved;
+                              sync.pop(item);
+                              localStorage.setItem(
+                                'users',
+                                JSON.stringify(sync)
+                              );
                             }}
                           >
                             <i className='fa fa-heart mr-5'></i>
                           </button>
+                          )}
                         </div>
                       </div>
                     </div>

@@ -8,11 +8,11 @@ export default function UsersList() {
   const [render, setRender] = useState(false);
 
   useEffect(() => {
-    const loaded = localStorage.getItem('loaded_gigs');
+    const loaded = localStorage.getItem('loaded_users');
     if (JSON.parse(loaded)) {
       setDelay(0);
     }
-    localStorage.setItem('loaded_gigs', true);
+    localStorage.setItem('loaded_users', true);
     setRender(true);
   }, []);
 

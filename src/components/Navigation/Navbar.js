@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import './Navbar.css';
 import { useContext } from 'react';
-import { UserContext } from '../../helpers/UserContext';
+import { UsersContext } from '../../helpers/Context';
 
 function Navbar() {
-  const { fav } = useContext(UserContext);
+  const { loved } = useContext(UsersContext);
   return (
     <nav className='navbar navbar-expand-lg navbar-light bg-light' style={{backgroundColor: 'whitesmoke'}}>
       <div className='container-fluid'>
@@ -50,7 +50,14 @@ function Navbar() {
         <form className='form-inline'>
           <Link className='nav-link active' aria-current='page' to='/favs'>
             <i className='fa fa-heart' style={{ fontSize: '1.1em', color: 'black' }}>
-              <span className='spacing'>{fav.length}</span>
+              <span className='spacing'>0</span>
+            </i>
+          </Link>
+        </form>
+        <form className='form-inline'>
+          <Link className='nav-link active' aria-current='page' to='/favs'>
+            <i className='fa fa-heart' style={{ fontSize: '1.1em', color: 'black' }}>
+              <span className='spacing'>{loved.length}</span>
             </i>
           </Link>
         </form>

@@ -43,3 +43,17 @@ export const fetchJobs = async offset => {
   }
   throw new Error(response.status);
 };
+
+/**
+ *
+ * @param {*} String: Location name for geocode
+ *
+ * @return {object} Returns an object with the job data
+ */
+export const fetchLocation = async locationName => {
+  const response = await axios.post(`/api/geocode/geocode?query=${locationName}`);
+  if (response.status === 200) {
+    return response.data.msg;
+  }
+  throw new Error(response.status);
+};

@@ -1,9 +1,7 @@
-import { UserContext } from '../../helpers/UserContext';
-import { useContext } from 'react';
 import './Favs.css';
 
 export default function Favs() {
-  const { fav } = useContext(UserContext);
+  const fav = []
   return (
     <div className='container'>
       {fav.length > 0
