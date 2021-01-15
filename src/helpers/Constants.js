@@ -77,6 +77,44 @@ export const getUsefulInfo = data => {
 };
 
 /**
+ * @param {array}: Array of arrays of strengths
+ *
+ * @return {array}: returns two arrays with the labels and weight of those
+ * whose weights are more than 0.
+ */
+export const getUsefulData = data => {
+  let skills = data.skills;
+  if (skills.length > 0) {
+    const filtered = skills.filter(item => {
+      return item.weight > 0;
+    });
+    const labels = filtered.map(item => {
+      return item.name;
+    });
+    const weight = filtered.map(item => {
+      return item.weight;
+    });
+    const data = {
+      labels: labels,
+      datasets: [
+        {
+          label: 'Details',
+          backgroundColor: 'rgba(179,181,198,0.2)',
+          borderColor: 'rgba(179,181,198,1)',
+          pointBackgroundColor: 'rgba(179,181,198,1)',
+          pointBorderColor: '#fff',
+          pointHoverBackgroundColor: '#fff',
+          pointHoverBorderColor: 'rgba(179,181,198,1)',
+          data: weight,
+        },
+      ],
+    };
+    return [filtered, data];
+  }
+  return [[], null];
+};
+
+/**
  *
  * @param {*} arr
  * @param {*} item

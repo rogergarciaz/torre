@@ -7,12 +7,12 @@ function App() {
   const value = useMemo(() => ({ loved, setLoved }), [loved, setLoved]);
 
   const onLoad = async () => {
-    const users = await JSON.parse(localStorage.getItem('users'));
-    if (users === null) {
+    const people = await JSON.parse(localStorage.getItem('users'));
+    if (people === null) {
       setLoved([]);
       return;
     }
-    setLoved(users)
+    setLoved(people)
   };
   useEffect(() => {
     onLoad();

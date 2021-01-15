@@ -6,8 +6,8 @@ const Home = lazy(() => import('../../components/Home/Home'));
 const Users = lazy(() => import('../../components/Users/Users'));
 const Jobs = lazy(() => import('../../components/Jobs/Jobs'));
 const Navbar = lazy(() => import('../../components/Navigation/Navbar'));
-const Favs = lazy(() => import('../../components/Favs/Favs'));
-const UsersList = lazy(() => import('../../components/UsersList/UsersList'));
+const Stats = lazy(() => import('../../components/Favs/Stats'));
+const People = lazy(() => import('../../components/People/People'));
 
 export default function Routes() {
   return (
@@ -26,13 +26,13 @@ export default function Routes() {
                 <Users />
               </Route>
               <Route exact path='/users'>
-                <UsersList />
+                <People />
               </Route>
               <Route path='/jobs'>
                 <Jobs />
               </Route>
-              <Route path='/favs'>
-                <Favs />
+              <Route path='/stats'>
+                <Stats />
               </Route>
             </Switch>
           </div>

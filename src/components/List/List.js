@@ -29,7 +29,7 @@ export default function List() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => {
-              setOffset(offset - 5);
+              setOffset(offset - 10);
             }}
             type='button'
             className='fa fa-hand-o-left mb-4 '
@@ -47,7 +47,7 @@ export default function List() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setOffset(offset + 5);
+            setOffset(offset + 10);
           }}
           type='button'
           className='fa fa-hand-o-right mb-4 '
@@ -73,7 +73,6 @@ export default function List() {
                     data-bs-target={`#${item.username}`}
                     type='button'
                   ></div>
-                  {console.log(item)}
                   <div className='modal fade' id={item.username} tabIndex='-1'>
                     <div className='modal-dialog'>
                       <div className='modal-content'>
@@ -97,7 +96,7 @@ export default function List() {
                           {item.locationName}
                           <br />
                           <a
-                            className='link-primary'
+                            className='btn btn-outline-dark'
                             href={`https://bio.torre.co/${item.username}`}
                             target='_blank'
                             rel='noreferrer'

@@ -14,11 +14,10 @@ const handler = async function (event, context) {
   }
   const { identity, user } = context.clientContext;
   try {
-    const locationName = event.queryStringParameters.offset;
-    const response = await fetch(
-      `http://api.positionstack.com/v1/forward?access_key=7d07d8c52f4021484fe4d379d67c5082&query=${locationName}`,
+    const location = event.queryStringParameters.search;
+    const response = await fetch(`http://api.positionstack.com/v1/forward?access_key=7d07d8c52f4021484fe4d379d67c5082&query=${location}`,
       {
-        method: 'POST',
+        method : 'GET'
       }
     );
     if (!response.ok) {
@@ -33,7 +32,7 @@ const handler = async function (event, context) {
     };
   } catch (error) {
     // output to netlify function log
-    console.log(error);
+    console.error(error);
     return {
       statusCode: 500,
       // Could be a custom message or object i.e. JSON.stringify(err)

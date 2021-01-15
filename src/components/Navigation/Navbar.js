@@ -48,14 +48,7 @@ function Navbar() {
           </ul>
         </div>
         <form className='form-inline'>
-          <Link className='nav-link active' aria-current='page' to='/favs'>
-            <i className='fa fa-heart' style={{ fontSize: '1.1em', color: 'black' }}>
-              <span className='spacing'>0</span>
-            </i>
-          </Link>
-        </form>
-        <form className='form-inline'>
-          <Link className='nav-link active' aria-current='page' to='/favs'>
+          <Link className='nav-link active' aria-current='page' to='/stats'>
             <i className='fa fa-heart' style={{ fontSize: '1.1em', color: 'black' }}>
               <span className='spacing'>{loved.length}</span>
             </i>

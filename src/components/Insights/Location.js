@@ -4,6 +4,8 @@ const position = [51.505, -0.09];
 
 export default function Location({ location }) {
   return (
+    <>
+    {console.log(location)}
     <MapContainer
       center={
         location !== undefined && location !== null
@@ -26,10 +28,11 @@ export default function Location({ location }) {
       >
         <Popup>
           {location !== undefined
-            ? "Hey, Come get me"
-            : "I know nothing, this is just a default position"}
+            ? "Hey, I'm over here!"
+            : "I won't tell you where I am, this is just a default position"}
         </Popup>
       </Marker>
     </MapContainer>
+    </>
   );
 }

@@ -26,7 +26,7 @@ export default function Gallery() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setOffset(offset - 5);
+            setOffset(offset - 10);
           }}
           type='button'
           className='fa fa-hand-o-left mb-4 '
@@ -44,7 +44,7 @@ export default function Gallery() {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.9 }}
           onClick={() => {
-            setOffset(offset + 5);
+            setOffset(offset + 10);
           }}
           type='button'
           className='fa fa-hand-o-right mb-4 '
@@ -86,35 +86,13 @@ export default function Gallery() {
                           ></button>
                         </div>
                         <div className='modal-body modal-colors'>
-                          Status:{' '}
-                          {item.status === 'open' ? (
-                            <>
-                              <i
-                                className='fa fa-check'
-                                style={{ color: 'green' }}
-                              >
-                                {' '}
-                                Open
-                              </i>
-                              <br />
-                            </>
-                          ) : (
-                            <>
-                              <i
-                                className='fa fa-times'
-                                style={{ color: 'red' }}
-                              >
-                                {' '}
-                                Closed
-                              </i>
-                              <br />
-                            </>
-                          )}
-                          Type: {item.type} <br />
+                          <strong>Status:</strong>{' '}
+                          {item.status}<br />
+                          <strong>Type:</strong> {item.type} <br />
                           {item.compensation !== undefined &&
                           item.compensation !== null ? (
                             <>
-                              Compensation:{' '}
+                              <strong>Compensation:</strong>{' '}
                               {item.compensation.data !== undefined &&
                               item.compensation.data !== null
                                 ? item.compensation.data.currency
@@ -135,7 +113,7 @@ export default function Gallery() {
                               <br />
                             </>
                           ) : null}
-                          Locations:{' '}
+                          <strong>Locations:</strong>{' '}
                           {item.locations.length > 0
                             ? item.locations.map(item => {
                                 return item;

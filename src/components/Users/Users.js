@@ -79,7 +79,7 @@ export default function Users() {
           initial='hidden'
           animate='visible'
           variants={variants}
-          transition={{ delay: delay * 3, duration: 2 }}
+          transition={{ delay: delay * 4, duration: 2 }}
           className='input-group mb-3 mt-4'
         >
           <input
@@ -100,7 +100,7 @@ export default function Users() {
             <motion.h1
               initial={{ scale: 2 }}
               animate={{ scale: 1 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 1 }}
               className='mt-4 mb-4'
             >
               {search.person.professionalHeadline !== undefined
@@ -109,11 +109,20 @@ export default function Users() {
             </motion.h1>
 
             <Card info={search} />
+
+            <motion.div
+              variants={container}
+              initial='hidden'
+              animate='show' 
+              transition={{ delay: delay * 8, duration: 3 }}
+            >
+              <h1  className='display-4'>Hey look below and don't forget scroll horizontally</h1>
+            </motion.div>
+
             <div className='container-fluid d-flex justify-content-center mt-5'>
               <Page width={'80%'} height={'100%'} className='slider'>
                 <Frame size={150} radius={30} background={'transparent'}>
                   <Pie user={search} />
-                  <h3 className='display-4'>Hey, don't forget scroll horizontally</h3>
                 </Frame>
                 <Frame size={150} radius={30} background={'transparent'}>
                   <Radar strengths={search} />

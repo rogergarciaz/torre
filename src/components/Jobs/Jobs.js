@@ -8,11 +8,11 @@ export default function Jobs() {
   const [render, setRender] = useState(false);
 
   useEffect(() => {
-    const loaded = localStorage.getItem('loaded_gigs');
+    const loaded = localStorage.getItem('loaded_jobs');
     if (JSON.parse(loaded)) {
       setDelay(0);
     }
-    localStorage.setItem('loaded_gigs', true);
+    localStorage.setItem('loaded_jobs', true);
     setRender(true);
   }, []);
 
