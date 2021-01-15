@@ -64,7 +64,7 @@ export default function Stats() {
                 variants={container}
                 initial='hidden'
                 animate='show' 
-                transition={{ delay: 0, duration: 1.5 }}
+                transition={{ delay: 0, duration: 0.5 }}
                 >
                     <h1  className='display-6'>
                         Hey look below and don't forget scroll horizontally
