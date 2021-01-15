@@ -1,33 +1,27 @@
+import { Frame, Page } from 'framer';
 import {  useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-//import Location from './Location';
+import { fetchUsername } from '../../helpers/Requests';
+import Location from './Location';
+import Pie from './Pie';
 
-export default function Map({item, show}) {
-  const [info, setInfo] = useState([]);
+export default function Modal({item, show}) {
+  const [info, setInfo] = useState(null);
   const history = useHistory();
-  const query = item.locationName.replaceAll(',','%2C').replaceAll(' ', '%20');
-  const url = `http://api.positionstack.com/v1/forward?access_key=7d07d8c52f4021484fe4d379d67c5082&query=${query}&limit=1`
-  const handleSearch = () => {
-    fetch(url)
-      .then(res=>res.json())
-      .then(contents=>{
-        (contents.data[0].latitude !==undefined) && (
-        setInfo([contents.data[0]])
-        )
-      })
-      .catch(()=>
-        console.log('Can’t access ' + url + ' response.')
-      );
-  };
-
-  useEffect(()=>{
-    handleSearch();
+  
+  useEffect(() => {
+    const fetch = async (item) => {
+      setInfo(await fetchUsername(item.username));
+    };
+    fetch(item);
+    return ''
     // eslint-disable-next-line
-  },[]);
+  }, []);
 
 
   return (
     <>
+    <div className='text-center'>
     <div
       className='btn btn-secondary'
       data-bs-toggle='modal'
@@ -36,6 +30,7 @@ export default function Map({item, show}) {
       type='button'
     >
       Locate!
+    </div>
     </div>
     <div className='modal fade' id={item.username} tabIndex='-1'>
       <div className='modal-dialog'>
@@ -51,9 +46,9 @@ export default function Map({item, show}) {
               aria-label='Close'
             ></button>
           </div>
-          <div className='modal-body modal-colors align-items-start'>
+          <div className='modal-body'>
             <strong>Interested in:</strong>{' '}
-            <ul className='list-group align-items-start'>
+            <ul className='list-group'>
               {item.openTo.map((text,i) =>{
                 return (<li style={{listStyleType:'none'}} key={i}>{text}</li>)
               })}
@@ -61,7 +56,7 @@ export default function Map({item, show}) {
             <br />
             <strong>Come visit me</strong>{' '}
             {console.log(info)}
-            {info.name} located in {info.continent}.
+            {info > 0 ? (<>{info.person.name} located in {info.person.location.name}</>) : null }
             <br />
               <button
               className='btn btn-outline-dark'
@@ -73,8 +68,17 @@ export default function Map({item, show}) {
                 More detailed info
               </button>
             <br/>
-            {//<Location location={info} />
-            }
+            {info > 0 ? (
+            <div className='container-fluid d-flex justify-content-center mt-5'>
+              <Page width={'80%'} height={'100%'} className='slider'>
+                <Frame size={150} radius={30} background={'transparent'}>
+                  <Pie user={info} />
+                </Frame>
+                <Frame size={150} radius={30} background={'transparent'}>
+                  <Location location={info.person.location} />
+                </Frame>
+              </Page>
+            </div>) : null }
             </div>
           <div className='modal-footer'>
             <button

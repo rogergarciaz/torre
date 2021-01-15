@@ -1,16 +1,24 @@
-import { useContext } from 'react';
+import { useContext, useEffect, useState } from 'react';
 import { Frame, Page } from 'framer';
 import { motion } from 'framer-motion';
 import { UsersContext } from '../../helpers/Context';
 import { container } from '../../helpers/Constants';
-import Map from '../Insights/Map';
+import Modal from '../Insights/Modal';
 import Radars from '../Insights/Radars';
 import './Favs.css';
 
 export default function Stats() {
   const { loved } = useContext(UsersContext);
+  const [render, setRender] = useState(false);
+
+  useEffect(() => {
+    localStorage.getItem('loaded_stats');
+    localStorage.setItem('loaded_stats', true);
+    setRender(true);
+  }, []);
   return (
-        <div className='text-center mt-5'>
+      render &&(
+        <div>
             {loved.length > 0 ? (
                 <motion.div
                 variants={container}
@@ -26,7 +34,7 @@ export default function Stats() {
             null
             }
             {loved.length > 0 && (loved.map((item,id) => {
-                return <Map item={item} show='none' />
+                return <Modal item={item} show='none' key={id} />
                 }))
             }
             <div className='container-fluid d-flex justify-content-center mt-5'>
@@ -35,7 +43,7 @@ export default function Stats() {
                     return (
                         <Frame size={150} radius={30} background={'transparent'} key={id}>
                             <Radars strengths={item} />
-                            <Map item={item} id={id} />
+                            <Modal item={item} />
                         </Frame>
                     )}
                 ))
@@ -47,5 +55,6 @@ export default function Stats() {
             </Page>
             </div>
         </div>
+      )
   );
 }

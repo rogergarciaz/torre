@@ -9,7 +9,7 @@ export default function Radars({ strengths }) {
         initial={{ scale: 2 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5 }}
-        className='mt-4'
+        className='text-center mt-4'
       >
         {strengths !== null && strengths.name !== undefined
           ? strengths.name

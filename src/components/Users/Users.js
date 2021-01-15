@@ -24,21 +24,22 @@ export default function Users() {
     setValue(event.target.value);
   };
 
+  const searchUsername = async () => {
+    try {
+      setSearch(await fetchUsername(value));
+      setChange(true)
+    } catch (error) {
+      setSearch(null);
+    }
+  }
+
   useEffect(() => {
     if (username && username !== 'undefined') {
       setValue(username);
     }
-    const timeoutId = setTimeout(async () => {
-      try {
-        setSearch(await fetchUsername(value));
-        setChange(true);
-      } catch (error) {
-        setSearch(null);
-      }
-    }, 1000);
-    return () => clearTimeout(timeoutId);
+    searchUsername();
     // eslint-disable-next-line
-  }, [value]);
+  }, []);
 
   useEffect(() => {
     const loaded = localStorage.getItem('loaded_users');
@@ -101,6 +102,7 @@ export default function Users() {
             }}
           />
         </motion.div>
+          <button className='btn btn-outline-dark' onClick={()=>searchUsername()}>Search!</button>
         {search !== null ? (
           <>
             <motion.h1

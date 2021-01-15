@@ -16,7 +16,8 @@ export default function Home() {
         <h1 className='display-4'>Hi, Wellcome to Torre's Test</h1>
         <p className='lead'>
           This web app is part a techical interview required for a software
-          developer position in torre by RAGZ.
+          developer position in torre.
+          Maded by RAGZ.
         </p>
         <img src={Logo} alt='Logo' />
       </div>

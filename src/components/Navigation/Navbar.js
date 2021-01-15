@@ -6,7 +6,7 @@ import { UsersContext } from '../../helpers/Context';
 function Navbar() {
   const { loved } = useContext(UsersContext);
   return (
-    <nav className='navbar navbar-expand-lg navbar-light bg-light' style={{backgroundColor: 'whitesmoke'}}>
+    <nav className='navbar navbar-expand-lg navbar-light bg-light' style={{backgroundColor: 'whitesmoke !important'}}>
       <div className='container-fluid'>
         <button
           className='navbar-toggler'

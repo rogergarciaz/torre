@@ -100,7 +100,7 @@ export default function Gallery() {
                               {item.compensation.data !== undefined &&
                               item.compensation.data !== null
                                 ? item.compensation.data.minAmount
-                                : null}{' '}
+                                : "Top secret"}{' '}
                               -{' '}
                               {item.compensation.data !== undefined &&
                               item.compensation.data !== null
@@ -118,10 +118,10 @@ export default function Gallery() {
                             ? item.locations.map(item => {
                                 return item;
                               })
-                            : 'Unknown'}{' '}
+                            : 'Hard to tell'}{' '}
                           <br />
                           <a
-                            className='link-primary'
+                            className='btn btn-outline-dark'
                             href={`https://torre.co/jobs/${item.id}`}
                             target='_blank'
                             rel='noreferrer'
