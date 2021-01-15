@@ -25,6 +25,10 @@ export default function Stats() {
             ):
             null
             }
+            {loved.length > 0 && (loved.map((item,id) => {
+                return <Map item={item} show='none' />
+                }))
+            }
             <div className='container-fluid d-flex justify-content-center mt-5'>
             <Page width={'80%'} height={'100%'} className='slider'>
                 {loved.length > 0? (loved.map((item,id) => {

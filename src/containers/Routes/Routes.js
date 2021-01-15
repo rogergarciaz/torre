@@ -22,7 +22,10 @@ export default function Routes() {
               <Route exact path='/'>
                 <Home />
               </Route>
-              <Route path='/user'>
+              <Route path='/user/:username'>
+                <Users />
+              </Route>
+              <Route exact path='/user'>
                 <Users />
               </Route>
               <Route exact path='/users'>

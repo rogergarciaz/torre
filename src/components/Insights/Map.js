@@ -1,8 +1,10 @@
 import {  useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 //import Location from './Location';
 
-export default function Map({item, id}) {
+export default function Map({item, show}) {
   const [info, setInfo] = useState([]);
+  const history = useHistory();
   const query = item.locationName.replaceAll(',','%2C').replaceAll(' ', '%20');
   const url = `http://api.positionstack.com/v1/forward?access_key=7d07d8c52f4021484fe4d379d67c5082&query=${query}&limit=1`
   const handleSearch = () => {
@@ -30,6 +32,7 @@ export default function Map({item, id}) {
       className='btn btn-secondary'
       data-bs-toggle='modal'
       data-bs-target={`#${item.username}`}
+      style={{display: show}}
       type='button'
     >
       Locate!
@@ -57,17 +60,18 @@ export default function Map({item, id}) {
             </ul>
             <br />
             <strong>Come visit me</strong>{' '}
-            {console.log(item)}
+            {console.log(info)}
             {info.name} located in {info.continent}.
             <br />
-              <a
-                className='btn btn-outline-dark'
-                href={`https://bio.torre.co/${item.username}`}
-                target='_blank'
-                rel='noreferrer'
+              <button
+              className='btn btn-outline-dark'
+              onClick={() => {
+                history.push(`/user/${item.username}`);
+              }}
+              data-bs-dismiss='modal'
               >
-                More info in my genome
-              </a> 
+                More detailed info
+              </button>
             <br/>
             {//<Location location={info} />
             }

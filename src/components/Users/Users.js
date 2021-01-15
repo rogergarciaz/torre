@@ -1,6 +1,7 @@
 import { Frame, Page } from 'framer';
 import { motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { container, variants } from '../../helpers/Constants';
 import { fetchUsername } from '../../helpers/Requests';
 import Card from '../Card/Card';
@@ -17,12 +18,16 @@ export default function Users() {
   const [search, setSearch] = useState(null);
   const [change, setChange] = useState(false);
   const [value, setValue] = useState('');
+  let { username } = useParams();
 
   const handleOnChange = event => {
     setValue(event.target.value);
   };
 
   useEffect(() => {
+    if (username && username !== 'undefined') {
+      setValue(username);
+    }
     const timeoutId = setTimeout(async () => {
       try {
         setSearch(await fetchUsername(value));
@@ -32,6 +37,7 @@ export default function Users() {
       }
     }, 1000);
     return () => clearTimeout(timeoutId);
+    // eslint-disable-next-line
   }, [value]);
 
   useEffect(() => {
@@ -83,7 +89,7 @@ export default function Users() {
           className='input-group mb-3 mt-4'
         >
           <input
-            placeholder="Write a torre's username, like zroger"
+            placeholder={username ? username : "Write a torre's username, like zroger"}
             autoComplete='off'
             autoCorrect='off'
             autoCapitalize='off'

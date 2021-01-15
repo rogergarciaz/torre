@@ -144,7 +144,7 @@ export default function List() {
                               );
                             }}
                           >
-                            <i className='fa fa-heart mr-5'></i>
+                            Clear users liked
                           </button>
                           )}
                         </div>
