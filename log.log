@@ -1,0 +1,77 @@
+commit d59c86cc052fbe62e6e1cfb0a59db241cb95aa24
+Author: rogergarciaz <zroger@uninorte.edu.co>
+Date:   Fri Jan 15 15:11:13 2021 -0500
+
+    Fixing details TODO map with all favs
+
+commit 7d68159dba180ffd50774117f670377b5f1e4a48
+Author: rogergarciaz <zroger@uninorte.edu.co>
+Date:   Fri Jan 15 12:42:25 2021 -0500
+
+    Adding stats for all favs
+
+commit 6b9fd9bf03fd4723d99eb3e05cf5f422e2c2dad2
+Author: rogergarciaz <zroger@uninorte.edu.co>
+Date:   Fri Jan 15 10:39:38 2021 -0500
+
+    making connections between components
+
+commit e03ab589b624dc1e106dfe398d8db631e10d01ce
+Author: rogergarciaz <zroger@uninorte.edu.co>
+Date:   Fri Jan 15 03:59:53 2021 -0500
+
+    TODO deselect only one fav, fix modal stats
+
+commit dbb946b7a2f7c444add8c1d19a98fde9529036a1
+Author: rogergarciaz <zroger@uninorte.edu.co>
+Date:   Fri Jan 15 03:52:53 2021 -0500
+
+    Adding comparisson from favs
+
+commit b0cd3715ab337f28cfde0bb32470c5722a780309
+Author: rogergarciaz <zroger@uninorte.edu.co>
+Date:   Thu Jan 14 17:04:36 2021 -0500
+
+    Refactoring and geocode consult ready
+
+commit bb500d5f59b23a50f3a03f4989b18616401e5028
+Author: rogergarciaz <zroger@uninorte.edu.co>
+Date:   Thu Jan 14 02:32:22 2021 -0500
+
+    Refactoring functions TODO fav users
+
+commit 3b5fea38101ac797bc5169c3153eebaaf4ef5232
+Author: rogergarciaz <zroger@uninorte.edu.co>
+Date:   Wed Jan 13 11:17:36 2021 -0500
+
+    functions TODO auth-fetch?search
+
+commit d63e8b34b3fbb184ff05a871340698bb4bc1e49e
+Author: rogergarciaz <zroger@uninorte.edu.co>
+Date:   Wed Jan 13 10:27:43 2021 -0500
+
+    Changing text
+
+commit 77d404b112ea266be83c99e1b5964693829a6996
+Author: rogergarciaz <zroger@uninorte.edu.co>
+Date:   Wed Jan 13 08:38:25 2021 -0500
+
+    configuration src/ public/
+
+commit 3793e177e1b12fa9dd14eab421b14f45dcc0c3d0
+Author: rogergarciaz <zroger@uninorte.edu.co>
+Date:   Wed Jan 13 01:36:58 2021 -0500
+
+    Adding components
+
+commit bb4c53970093092181f3115ae2500598a33565da
+Author: rogergarciaz <zroger@uninorte.edu.co>
+Date:   Tue Jan 12 23:40:20 2021 -0500
+
+    Adding netlify
+
+commit 86989dd1846a9a2f8fa4d92951e4f6b56ac1443b
+Author: rogergarciaz <zroger@uninorte.edu.co>
+Date:   Tue Jan 12 23:23:41 2021 -0500
+
+    Installing React, React-Router
