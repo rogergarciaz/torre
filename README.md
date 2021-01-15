@@ -7,6 +7,9 @@ _This web app is part a techical interview required for a software developer pos
 
 ### `yarn start`
 
+## For Netlify use the next command for dev environment
+
+### `netlify dev`
 
 ## Mainly Tools
 * [React](https://en.reactjs.org/)
