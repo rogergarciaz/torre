@@ -16,7 +16,7 @@ export default function Accordion({ education, jobs, projects }) {
         </svg>
       </div>
 
-      <details open>
+      <details>
         <summary>
           Education
           <svg

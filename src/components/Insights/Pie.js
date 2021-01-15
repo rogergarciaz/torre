@@ -19,7 +19,7 @@ export default function Pie({ user }) {
         initial={{ scale: 2 }}
         animate={{ scale: 1 }}
         transition={{ duration: 0.5 }}
-        className='mt-4'
+        className='text-center mt-4'
       >
         About{' '}
         {user !== null && user.person.name !== undefined

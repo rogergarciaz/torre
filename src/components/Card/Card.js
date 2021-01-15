@@ -23,7 +23,7 @@ export default function Card(data) {
               <div className='profile-name'>
                 {person.name !== null || person.name !== undefined
                   ? person.name
-                  : 'Unknown'}
+                  : 'Unknown, how bizarre...'}
               </div>
               <div className='profile-username'>@{person.publicId}</div>
 

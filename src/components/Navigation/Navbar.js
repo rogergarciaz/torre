@@ -28,12 +28,6 @@ function Navbar() {
               </Link>
             </li>
             <li className='nav-item'>
-              <Link className='nav-link active' aria-current='page' to='/user'>
-                <i className='fa fa-user mr-2'></i>
-                <span className='spacing'>User</span>
-              </Link>
-            </li>
-            <li className='nav-item'>
               <Link className='nav-link active' aria-current='page' to='/users'>
                 <i className='fa fa-users' ></i>
                 <span className='spacing'>Users</span>

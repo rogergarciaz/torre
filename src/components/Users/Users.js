@@ -90,7 +90,7 @@ export default function Users() {
           className='input-group mb-3 mt-4'
         >
           <input
-            placeholder={username ? username : "Write a torre's username, like zroger"}
+            placeholder={username ? username : "Write a torre's username, like ni500"}
             autoComplete='off'
             autoCorrect='off'
             autoCapitalize='off'

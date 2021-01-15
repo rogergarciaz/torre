@@ -25,7 +25,7 @@ export default function People() {
           variants={variants}
           transition={{ duration: 2 }}
         >
-          Let's see possibly signals!
+          Let's choose our favs!
         </motion.h1>
         <motion.div
           initial='hidden'
