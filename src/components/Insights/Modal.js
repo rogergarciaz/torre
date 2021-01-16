@@ -21,7 +21,7 @@ export default function Modal({item, show}) {
     <>
     <div className='text-center'>
     <div
-      className='btn btn-secondary'
+      className='btn btn-outline-secondary'
       data-bs-toggle='modal'
       data-bs-target={`#${item.username}`}
       style={{display: show}}
@@ -77,7 +77,7 @@ export default function Modal({item, show}) {
           <div className='modal-footer'>
             <button
               type='button'
-              className='btn btn-secondary'
+              className='btn btn-outline-secondary'
               data-bs-dismiss='modal'
             >
               Close

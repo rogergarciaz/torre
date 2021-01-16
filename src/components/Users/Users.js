@@ -124,11 +124,11 @@ export default function Users() {
               animate='show' 
               transition={{ delay: delay * 8, duration: 3 }}
             >
-              <h1  className='display-4'>Hey look below and don't forget scroll horizontally</h1>
+              <h1  className='display-4'>Hey look below, click and scroll vertically</h1>
             </motion.div>
 
             <div className='container-fluid d-flex justify-content-center mt-5'>
-              <Page width={'80%'} height={'100%'} className='slider'>
+              <Page width={'80%'} height={'100%'} className='slider' direction='vertical'>
                 <Frame size={150} radius={30} background={'transparent'}>
                   <Pie user={search} />
                 </Frame>

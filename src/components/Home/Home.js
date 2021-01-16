@@ -6,6 +6,7 @@ export default function Home() {
   const history = useHistory();
 
   return (
+    <>
     <motion.div
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.9 }}
@@ -22,5 +23,12 @@ export default function Home() {
         <img src={Logo} alt='Logo' />
       </div>
     </motion.div>
+    <h5 className='jumbotron jumbotron-fluid mt-5 text-center'>
+      Inspired by <a href='https://github.com/samgj18/torre_app'>
+        Samuel Gomez
+        </a>
+    </h5>
+
+    </>
   );
 }

@@ -107,7 +107,7 @@ export default function List() {
                         <div className='modal-footer'>
                           <button
                             type='button'
-                            className='btn btn-secondary'
+                            className='btn btn-outline-secondary'
                             data-bs-dismiss='modal'
                           >
                             Close
@@ -115,7 +115,7 @@ export default function List() {
                           {(!isArrayInArray(loved, item)) ? (
                             <button
                             type='button'
-                            className='btn btn-warning'
+                            className='btn btn-outline-warning'
                             data-bs-dismiss='modal'
                             onClick={() => {
                               setLoved([...loved, item]);
@@ -132,7 +132,7 @@ export default function List() {
                           ) : (
                             <button
                             type='button'
-                            className='btn btn-warning'
+                            className='btn btn-outline-warning'
                             data-bs-dismiss='modal'
                             onClick={() => {
                               setLoved(loved.filter(i => i.id !== item.id));

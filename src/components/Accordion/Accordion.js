@@ -91,44 +91,6 @@ export default function Accordion({ education, jobs, projects }) {
           <code>No information</code>
         )}
       </details>
-
-      <details>
-        <summary>
-          Projects
-          <svg
-            className='control-icon control-icon-expand'
-            width='24'
-            height='24'
-            role='presentation'
-          >
-            <use href='#expand-more' />
-          </svg>
-          <svg
-            className='control-icon control-icon-close'
-            width='24'
-            height='24'
-            role='presentation'
-          >
-            <use href='#close' />
-          </svg>
-        </summary>
-        {projects.length > 0 ? (
-          projects.map((item, key) => {
-            return (
-              <p key={key}>
-                {item.name}
-                {item.organizations.length > 0
-                  ? ' - ' + item.organizations[0].name
-                  : null}
-                {item.organizations.length > 1 ? 'and others.' : null}
-                <br />
-              </p>
-            );
-          })
-        ) : (
-          <code>No information</code>
-        )}
-      </details>
     </>
   );
 }
