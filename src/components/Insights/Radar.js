@@ -16,7 +16,7 @@ export default function Rad({ strengths }) {
       {getUsefulInfo(strengths)[0].length > 0 ? (
         <Radar data={getUsefulInfo(strengths)[1]} />
       ) : (
-        'Nothing to see yet'
+        <h4 className='text-center'>Nothing to see yet</h4>
       )}
     </div>
   );
