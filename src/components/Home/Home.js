@@ -23,12 +23,6 @@ export default function Home() {
         <img src={Logo} alt='Logo' />
       </div>
     </motion.div>
-    <h5 className='jumbotron jumbotron-fluid mt-5 text-center'>
-      Inspired by <a href='https://github.com/samgj18/torre_app'>
-        Samuel Gomez
-        </a>
-    </h5>
-
     </>
   );
 }
